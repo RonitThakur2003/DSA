@@ -1,5 +1,6 @@
 #include<iostream>
 #include<map>
+#include<math.h>
 // #include<bits/stdc++.h>
 using namespace std;
 
@@ -125,13 +126,117 @@ using namespace std;
 // }
 
 
-int main(){
-    map<int, int> mpp;
-    mpp.insert({1,2});
-    mpp.insert({2,4});
-    mpp.insert({3,6});
-    for(auto it:mpp){
-        cout<<it.first<<" "<<it.second<<endl;
-    }
-    return 0;
-}
+// int main(){
+//     map<int, int> mpp;
+//     mpp.insert({1,2});
+//     mpp.insert({2,4});
+//     mpp.insert({3,6});
+//     for(auto it:mpp){
+//         cout<<it.first<<" "<<it.second<<endl;
+//     }
+//     return 0;
+// }
+
+// int main(){
+//     vector<int> v;
+//     int n;
+//     cout<<"Enter the number";
+//     cin>>n;
+//     for(int i=1;i*i<=n;i++){
+//         if(n%i==0){
+//             v.push_back(i);
+//             if((n/i)!=i){
+//                 v.push_back(n/i);
+//             }
+//         }
+//     }
+//     sort(v.begin(),v.end());
+//     for(auto it:v){
+//         cout<<it<<endl;
+//     }
+//     return 0;
+// }
+
+
+
+// Recursion
+
+// int cnt = 1;
+// void nums(){
+//     if(cnt>20){
+//         return;
+//     }
+//     cout<<cnt<<endl;
+//     cnt++;
+//     nums();
+// }
+
+// int main(){
+//     nums();
+// }
+
+
+// void name(int i,int n){
+//     if(i>n){
+//         return;
+//     }
+//     cout<<"Ronit";
+//     name(i+1,n);
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter any NUmber";
+//     cin>>n;
+//     name(1,n);
+// }
+
+
+// void nums(int i,int n){
+//     if(i>n){
+//         return;
+//     }
+//     cout<<n<<endl;
+//     nums(i,n-1);
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter any NUmber";
+//     cin>>n;
+//     nums(1,n);
+// }
+
+
+
+// void nums(int i,int n){
+//     if(i<1){
+//         return;
+//     }
+//     nums(i-1,n);
+//     cout<<i<<endl;
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter any NUmber";
+//     cin>>n;
+//     nums(n,n);
+// }
+
+
+
+// void nums(int i,int n){
+//     if(i>n){
+//         return;
+//     }
+//     nums(i+1,n);
+//     cout<<i<<endl;
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter any NUmber";
+//     cin>>n;
+//     nums(1,n);
+// }
