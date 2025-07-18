@@ -90,3 +90,19 @@ using namespace std;
 //     pattern(n);
 //     return 0;
 // }
+
+
+
+// STL => standard template library
+
+// int main(){
+//     pair<int,int> p = {1,3};
+//     cout<<p.first<<p.second;
+//     return 0;
+// }
+
+int main(){
+    pair<int,int> arr[] = {{1,3},{5,6}};
+    cout<<arr[1].first;
+    return 0;
+}
