@@ -1,4 +1,6 @@
 #include<iostream>
+#include<map>
+// #include<bits/stdc++.h>
 using namespace std;
 
 //     void print(int n){
@@ -101,8 +103,35 @@ using namespace std;
 //     return 0;
 // }
 
+// int main(){
+//     pair<int,int> arr[] = {{1,3},{5,6}};
+//     cout<<arr[1].first;
+//     return 0;
+// }
+
+
+// int main(){
+//     vector<int> v1(5,20);
+//     v1.push_back(10);
+//     vector<int> v2(v1);
+//     // cout<<v2[5];
+//     // vector<int>::iterator it = v1.begin();
+//     // it++;
+//     // cout<<*(it)<<" ";
+//     for(auto it:v1){
+//         cout<<it<<" ";
+//     }
+//     return 0;
+// }
+
+
 int main(){
-    pair<int,int> arr[] = {{1,3},{5,6}};
-    cout<<arr[1].first;
+    map<int, int> mpp;
+    mpp.insert({1,2});
+    mpp.insert({2,4});
+    mpp.insert({3,6});
+    for(auto it:mpp){
+        cout<<it.first<<" "<<it.second<<endl;
+    }
     return 0;
 }
