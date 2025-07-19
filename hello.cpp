@@ -309,16 +309,67 @@ using namespace std;
 // }
 
 
-string palindrome(int i,string str,int n){
-    if(i>=n/2) return "String is Palindrome";
-    if(str[i]!=str[n-i-1]) return "String is not Palindrome";
-    return palindrome(i+1,str,n);
-}
+// string palindrome(int i,string str,int n){
+//     if(i>=n/2) return "String is Palindrome";
+//     if(str[i]!=str[n-i-1]) return "String is not Palindrome";
+//     return palindrome(i+1,str,n);
+// }
 
-int main(){
-    string str;
-    cout<<"Enter String to Check";
-    cin>>str;
-    int n = str.size();
-    cout<<palindrome(0,str,n);
-}
+// int main(){
+//     string str;
+//     cout<<"Enter String to Check";
+//     cin>>str;
+//     int n = str.size();
+//     cout<<palindrome(0,str,n);
+// }
+
+
+// Hashing
+
+// int main(){
+//     int n;
+//     cout<<"Enter the size of the array";
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+
+//     int hash[10]={0};
+//     for(int i=0;i<n;i++){
+//         hash[arr[i]] += 1;
+//     }
+
+//     cout<<"Enter the number";
+//     int m;
+//     cin>>m;
+//     cout<<m<<" is "<<hash[m]<<" times";
+// }
+
+// int main(){
+// int arr[]={1,2,3,4,5,6,7,8,9};
+// for(auto it : arr){
+//     cout<<it<<endl;
+// }
+// }
+
+// int main(){
+//     int arr[]={6,6,6,3,1,3};
+//     int n = 6,maxi=0,mini=INT_MAX,maxValue,minVAlue;
+//     unordered_map<int,int> mpp;
+//     for(int i=0;i<n;i++){
+//         mpp[arr[i]]++;
+//     }
+//     for(auto it:mpp){
+//         if(it.second>maxi) {
+//             maxi=it.second;
+//             maxValue = it.first;
+//         }
+//         if(it.second<mini) {
+//             mini=it.second;
+//             minVAlue = it.first;
+//         }
+//     }
+//     cout<<maxValue<<endl<<minVAlue;
+//     return 0;
+// }
