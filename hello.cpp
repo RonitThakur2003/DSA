@@ -240,3 +240,47 @@ using namespace std;
 //     cin>>n;
 //     nums(1,n);
 // }
+
+
+// void add(int i,int sum){
+//     if(i<1){
+//         cout<<sum;
+//         return;
+//     }
+//     add(i-1,sum+i);
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter any number";
+//     cin>>n;
+//     add(n,0);
+// }
+
+// int sum(int n){
+//     if(n==0){
+//         return 0;
+//     }
+//     return n + sum(n-1);
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter any number";
+//     cin>>n;
+//     cout<<sum(n);
+// }
+
+int fact(int n){
+    if(n==1){
+        return 1;
+    }
+    return n * fact(n-1);
+}
+
+int main(){
+    int n;
+    cout<<"Enter any number";
+    cin>>n;
+    cout<<fact(n);
+}
