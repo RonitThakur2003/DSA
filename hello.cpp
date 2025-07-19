@@ -271,16 +271,54 @@ using namespace std;
 //     cout<<sum(n);
 // }
 
-int fact(int n){
-    if(n==1){
-        return 1;
-    }
-    return n * fact(n-1);
+// int fact(int n){
+//     if(n==1){
+//         return 1;
+//     }
+//     return n * fact(n-1);
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter any number";
+//     cin>>n;
+//     cout<<fact(n);
+// }
+
+// void rev(int i,int arr[],int n){
+//     if(i>=n/2) return ;
+//     swap(arr[i],arr[n-i-1]);
+//     rev(i+1,arr,n);
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter any number";
+//     cin>>n;
+//     cout<<"Enter numbers to reverse";
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     cout<<"Original arrray";
+//     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+//     cout<<endl;
+//     rev(0,arr,n);
+//     cout<<"Reversed arrray";
+//     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+// }
+
+
+string palindrome(int i,string str,int n){
+    if(i>=n/2) return "String is Palindrome";
+    if(str[i]!=str[n-i-1]) return "String is not Palindrome";
+    return palindrome(i+1,str,n);
 }
 
 int main(){
-    int n;
-    cout<<"Enter any number";
-    cin>>n;
-    cout<<fact(n);
+    string str;
+    cout<<"Enter String to Check";
+    cin>>str;
+    int n = str.size();
+    cout<<palindrome(0,str,n);
 }
