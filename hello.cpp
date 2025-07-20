@@ -96,7 +96,7 @@ using namespace std;
 
 
 
-// STL => standard template library
+// STL => standard template library----------------
 
 // int main(){
 //     pair<int,int> p = {1,3};
@@ -159,7 +159,7 @@ using namespace std;
 
 
 
-// Recursion
+// RECURSION----------
 
 // int cnt = 1;
 // void nums(){
@@ -324,7 +324,7 @@ using namespace std;
 // }
 
 
-// Hashing
+// HASHING----------
 
 // int main(){
 //     int n;
@@ -373,3 +373,64 @@ using namespace std;
 //     cout<<maxValue<<endl<<minVAlue;
 //     return 0;
 // }
+
+
+// SORTING--------
+
+// SELECTION SORT--------------
+
+// int main(){
+//     int arr[]={37,45,32,65,24,13};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     for(int i=0;i<n;i++){
+//         int min = i;
+//         for(int j=i;j<n;j++){
+//             if(arr[j]<arr[min]) min = j;
+//         }
+//         swap(arr[i],arr[min]);
+//     }
+//     for(auto it:arr){
+//         cout<<it<<"  ";
+//     }
+//     return 0;
+// }
+
+
+// BUBBLE SORT------------
+
+// int main(){
+//     int arr[]={37,45,32,65,24,13};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     for(int i=n-1;i>=0;i--){
+//         int didSwap = 0;
+//         for(int j=0;j<i;j++){
+//             if(arr[j]>arr[j+1]) swap(arr[j],arr[j+1]);
+//             didSwap++;
+//         }
+//         if(didSwap==0) break;
+//     }
+//     for(auto it:arr){
+//     cout<<it;
+//     }
+//     return 0;
+// }
+
+// INSERTION SORT-------------
+
+
+// int main(){
+//     int arr[]={37,45,32,65,24,13};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     for(int i=0;i<n;i++){
+//         int j=i;
+//         while(j>0 && arr[j-1]>arr[j]){
+//             swap(arr[j-1],arr[j]);
+//             j--;
+//         }
+//     }
+//     for(auto it:arr){
+//     cout<<it;
+//     }
+//     return 0;
+// }
+
