@@ -123,3 +123,40 @@ using namespace std;
 //     rotate(nums,n);
 //     return 0;
 // }
+
+
+// Right rotate an array by D places--------------------
+
+// class Solution {
+// public:
+//     void rotate(vector<int>& nums, int k) {
+//         int n = nums.size();
+//         k=k%n;
+//         if(k==0) return;
+//         reverse(nums.begin(),nums.end());
+//         reverse(nums.begin(),nums.begin()+k);
+//         reverse(nums.begin()+k,nums.end());
+//     }
+// };
+
+
+// Move Zeros to end--------------------------
+
+// class Solution {
+// public:
+//     void moveZeroes(vector<int>& nums) {
+//         int n = nums.size();
+//         int j = 0;
+//         for(int i=0;i<n-1;i++){
+//             if(nums[i]==0 && nums[i+1]!=0){
+//                 swap(nums[j],nums[i+1]);
+//                 j++;
+//                 continue;
+//             }
+//             if(nums[i]!=0){
+//                 j++;
+//             }
+//         }
+//         return;
+//     }
+// };
