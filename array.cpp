@@ -317,3 +317,17 @@ using namespace std;
 //         }
 //         return maxCnt;
 //     }
+
+
+
+// Find the number that appears once, and other numbers twice.---------------------
+
+
+ int singleNumber(vector<int>& nums) {
+        int n = nums.size();
+        int el=0;
+        for(int i=0;i<n;i++){
+            el = el^nums[i];
+        }
+        return el;
+    }
