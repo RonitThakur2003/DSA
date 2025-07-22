@@ -160,3 +160,160 @@ using namespace std;
 //         return;
 //     }
 // };
+
+
+
+// LINEAR SEARCH--------------------------------
+
+// int linearSearch(vector<int>& nums,int n,int k){
+//     for(int i=0;i<n;i++){
+//         if(nums[i]==k){
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+
+// int main(){
+//     int n,k;
+//     cout<<"Enter the Size of the array";
+//     cin>>n;
+//     vector<int> nums(n);
+//     cout<<"Enter an Array"; 
+//     for(int i=0;i<n;i++){
+//         cin>>nums[i];
+//     }
+//     cout<<"Enter the number to search in array";
+//     cin>>k;
+//     cout<<linearSearch(nums,n,k);
+//     return 0;
+// }
+
+// Union of two sorted array---------------------------
+
+// vector<int> unionArr(vector<int>& a,vector<int>& b,int n1,int n2){
+//     vector<int> u;
+//     int i=0,j=0;
+//     while(i<n1 &&j<n2){
+//         if(a[i]<=b[j]){
+//             if(u.size()==0 || u.back()!=a[i]){
+//                 u.push_back(a[i]);
+//             }
+//             i++;
+//         }else{
+//             if(u.size()==0 || u.back()!=b[j]){
+//                 u.push_back(b[j]);
+//             }
+//             j++;
+//         }
+//     }
+//     while(i<n1){
+//         if(u.size()==0 || u.back()!=a[i]){
+//             u.push_back(a[i]);
+//         }
+//         i++;
+//     }
+//     while(j<n2){
+//         if(u.size()==0 || u.back()!=b[j]){
+//             u.push_back(b[j]);
+//         }
+//         j++;
+//     }
+//     return u;
+// }
+
+
+// int main(){
+//     int n1,n2;
+//     cout<<"Enter the Size of the first array";
+//     cin>>n1;
+//     vector<int> a(n1);
+//     cout<<"Enter an Array"; 
+//     for(int i=0;i<n1;i++){
+//         cin>>a[i];
+//     }
+//     cout<<"Enter the Size of the second array";
+//     cin>>n2;
+//     vector<int> b(n2);
+//     cout<<"Enter an Array"; 
+//     for(int i=0;i<n2;i++){
+//         cin>>b[i];
+//     }
+//     vector<int> u = unionArr(a,b,n1,n2);
+//     for(auto it:u){
+//         cout<<it;
+//     }
+//     return 0;
+// }
+
+
+// Intersection ---------------------------------
+
+
+// vector<int> intersectionArr(vector<int>& a,vector<int>& b,int n1,int n2){
+//     vector<int> inter;
+//     int i=0,j=0;
+//     while(i<n1 && j<n2){
+//         if(a[i]<b[j]) i++;
+//         else if(a[i]>b[j]) j++;
+//         else{
+//             inter.push_back(a[i]);
+//             i++;
+//             j++;
+//         }
+//     }
+//     return inter;
+// }
+
+// int main(){
+//     int n1,n2;
+//     cout<<"Enter the Size of the first array";
+//     cin>>n1;
+//     vector<int> a(n1);
+//     cout<<"Enter an Array"; 
+//     for(int i=0;i<n1;i++){
+//         cin>>a[i];
+//     }
+//     cout<<"Enter the Size of the second array";
+//     cin>>n2;
+//     vector<int> b(n2);
+//     cout<<"Enter an Array"; 
+//     for(int i=0;i<n2;i++){
+//         cin>>b[i];
+//     }
+//     vector<int> inter = intersectionArr(a,b,n1,n2);
+//     for(auto it:inter){
+//         cout<<it;
+//     }
+//     return 0;
+// }
+
+// Missing Numbers-----------------------------------
+
+// int missingNumber(vector<int>& nums) {
+//        int n = nums.size();
+//        int s1=0,s2=0;
+//        for(int i=1;i<=n;i++){
+//         s1 += nums[i-1];
+//         s2 += i;
+//    }
+//     return s2-s1;
+// }
+
+
+// Maximum Consecutive Ones----------------------
+
+//  int findMaxConsecutiveOnes(vector<int>& nums) {
+//         int cnt = 0,maxCnt = 0;
+//         for(int i=0;i<nums.size();i++){
+//             if(nums[i]==1){
+//                 cnt++;
+//                 maxCnt = max(cnt,maxCnt);
+//             }
+//             else{
+//                 cnt=0;
+//             }
+            
+//         }
+//         return maxCnt;
+//     }
