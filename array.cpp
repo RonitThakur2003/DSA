@@ -323,11 +323,49 @@ using namespace std;
 // Find the number that appears once, and other numbers twice.---------------------
 
 
- int singleNumber(vector<int>& nums) {
-        int n = nums.size();
-        int el=0;
-        for(int i=0;i<n;i++){
-            el = el^nums[i];
-        }
-        return el;
-    }
+//  int singleNumber(vector<int>& nums) {
+//         int n = nums.size();
+//         int el=0;
+//         for(int i=0;i<n;i++){
+//             el = el^nums[i];
+//         }
+//         return el;
+//     }
+
+
+// Longest subarray with given sum K(positives)------------------------------------
+
+// int largestSubarraySum(vector<int>& nums,int n,int k){
+//     int sum=0,len=0,maxLen=0,j=0;
+//     for(int i=0;i<n;i++){
+//         sum += nums[i];
+//         if(sum==k){
+//             len=i-j+1;
+//             maxLen = max(maxLen,len);
+//         }else if(sum>k){
+//             sum -= nums[j];
+//             j++;
+//             if(sum==k){
+//             len=i-j+1;
+//             maxLen = max(maxLen,len);
+//             }
+//         }
+//     }
+//     return maxLen;
+// }
+
+
+// int main(){
+//     int n,k;
+//     cout<<"Enter the Size of the array";
+//     cin>>n;
+//     vector<int> nums(n);
+//     cout<<"Enter an Array"; 
+//     for(int i=0;i<n;i++){
+//         cin>>nums[i];
+//     }
+//     cout<<"Enter the Sum of the subarray";
+//     cin>>k;
+//     cout<<largestSubarraySum(nums,n,k);
+//     return 0;
+// }
