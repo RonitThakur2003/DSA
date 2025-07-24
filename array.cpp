@@ -335,37 +335,133 @@ using namespace std;
 
 // Longest subarray with given sum K(positives)------------------------------------
 
-int largestSubarraySum(vector<int>& nums,int n,int k){
-    int sum=0,len=0,maxLen=0,j=0;
-    for(int i=0;i<n;i++){
-        sum += nums[i];
-        if(sum==k){
-            len=i-j+1;
-            maxLen = max(maxLen,len);
-        }else if(sum>k){
-            sum -= nums[j];
-            j++;
-            if(sum==k){
-            len=i-j+1;
-            maxLen = max(maxLen,len);
-            }
-        }
-    }
-    return maxLen;
-}
+// int largestSubarraySum(vector<int>& nums,int n,int k){
+//     int sum=0,len=0,maxLen=0,j=0;
+//     for(int i=0;i<n;i++){
+//         sum += nums[i];
+//         if(sum==k){
+//             len=i-j+1;
+//             maxLen = max(maxLen,len);
+//         }else if(sum>k){
+//             sum -= nums[j];
+//             j++;
+//             if(sum==k){
+//             len=i-j+1;
+//             maxLen = max(maxLen,len);
+//             }
+//         }
+//     }
+//     return maxLen;
+// }
 
 
-int main(){
-    int n,k;
-    cout<<"Enter the Size of the array";
-    cin>>n;
-    vector<int> nums(n);
-    cout<<"Enter an Array"; 
-    for(int i=0;i<n;i++){
-        cin>>nums[i];
-    }
-    cout<<"Enter the Sum of the subarray";
-    cin>>k;
-    cout<<largestSubarraySum(nums,n,k);
-    return 0;
-}
+// int main(){
+//     int n,k;
+//     cout<<"Enter the Size of the array";
+//     cin>>n;
+//     vector<int> nums(n);
+//     cout<<"Enter an Array"; 
+//     for(int i=0;i<n;i++){
+//         cin>>nums[i];
+//     }
+//     cout<<"Enter the Sum of the subarray";
+//     cin>>k;
+//     cout<<largestSubarraySum(nums,n,k);
+//     return 0;
+// }
+
+
+// SORT COLORS----------------------------------
+
+// class Solution {
+// public:
+//     void sortColors(vector<int>& nums) {
+//         int n=nums.size();
+//        int cnt0=0,cnt1=0,cnt2=0;
+//        for(int i = 0;i<n;i++){
+//         if(nums[i]==0) cnt0++;
+//         else if(nums[i]==1) cnt1++;
+//         else cnt2++;
+//        }
+//        for(int i=0;i<cnt0;i++){
+//         nums[i]=0;
+//        }
+//        for(int i=cnt0;i<cnt0+cnt1;i++){
+//         nums[i]=1;
+//        }
+//        for(int i=cnt0+cnt1;i<n;i++){
+//         nums[i]=2;
+//        }
+//     }
+// };
+
+
+// MAJORITY ELEMENTS----------------------------------
+
+// class Solution {
+// public:
+//     int majorityElement(vector<int>& nums) {
+//        map<int,int> mpp;
+//        int n = nums.size();
+//        for(int i=0;i<n;i++){
+//         mpp[nums[i]]++;
+//        }
+//        for(auto it:mpp){
+//         if(it.second>n/2) return it.first;
+//        }
+//        return -1;
+//     }
+// };
+
+
+
+// class Solution {
+// public:
+//     int majorityElement(vector<int>& nums) {
+//         int el=nums[0],cnt=1;
+//         for(int i=1;i<nums.size();i++){
+//             if(cnt==0){ 
+//                 el=nums[i];
+//                 cnt++;
+//             }
+//             else if(nums[i]==el) cnt++;
+//             else cnt--;
+//         }
+//         return el;
+//     }
+// };
+
+
+// maximum sum of subarray KADANE'S ALGORITHM----------------------
+
+// class Solution {
+// public:
+//     int maxSubArray(vector<int>& nums) {
+//         int maxi=INT_MIN,sum=0;
+//         for(int i=0;i<nums.size();i++){
+//             sum += nums[i];
+//             if(sum<0){
+//                 sum=0;
+//                 maxi = max(maxi,sum);
+//             }else{
+//                 maxi = max(maxi,sum);
+//             }
+//         }
+//         return maxi;
+//     }
+// };
+
+
+//  Best Time to Buy and Sell Stock
+
+// class Solution {
+// public:
+//     int maxProfit(vector<int>& prices) {
+//         int mini=INT_MAX,profit=0;
+//         for(auto it:prices){
+//             mini = min(it,mini);
+//             profit = max(profit,it-mini);
+//         }
+//         return profit;
+//     }
+// };
