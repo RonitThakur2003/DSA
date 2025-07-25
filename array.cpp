@@ -465,3 +465,106 @@ using namespace std;
 //         return profit;
 //     }
 // };
+
+
+// Rearrange Array Elements by Sign---------------------------------
+
+// class Solution {
+// public:
+//     vector<int> rearrangeArray(vector<int>& nums) {
+//         vector<int> arr(nums.size());
+//         int cntOdd=0,cntEven=1;
+//         for(int i=0;i<nums.size();i++){
+//             if(nums[i]>=0){
+//                 arr[cntOdd]=nums[i];
+//                 cntOdd += 2;
+//             }
+//             else{
+//                 arr[cntEven]=nums[i];
+//                 cntEven += 2;
+//             }
+//         }
+//         return arr;
+//     }
+// };
+
+
+// Next Permutation------------------------------------------------
+
+// class Solution {
+// public:
+//     void nextPermutation(vector<int>& nums) {
+//         int n = nums.size();
+//         int ind=-1;
+//         for(int i=n-2;i>=0;i--){
+//             if(nums[i]<nums[i+1]){
+//                 ind = i;
+//                 break;
+//             }
+//         }
+//         if(ind==-1){
+//             reverse(nums.begin(),nums.end());
+//             return;
+//         }
+//         for(int i=n-1;i>ind;i--){
+//             if(nums[i]>nums[ind]){
+//                 swap(nums[i],nums[ind]);
+//                 break;
+//             }
+//         }
+//         reverse(nums.begin()+ind+1,nums.end());
+//         return;
+//     }
+// };
+
+
+
+// Longest Consecutive Sequence-------------------------------------------
+
+// BETTER APPROACH---------------
+
+// class Solution {
+// public:
+//     int longestConsecutive(vector<int>& nums) {
+//         sort(nums.begin(),nums.end());
+//         int currCnt=0,longestCnt=0,lastSmall=INT_MIN;
+//         for(int i=0;i<nums.size();i++){
+//             if(nums[i]-1==lastSmall){
+//                 lastSmall=nums[i];
+//                 currCnt++;
+//             }else if(nums[i]!=lastSmall){
+//                 lastSmall=nums[i];
+//                 currCnt = 1;
+//             }
+//             longestCnt = max(longestCnt,currCnt);
+//         }
+//         return longestCnt;
+//     }
+// };
+
+
+// OPTIMAL APPROACH---------------
+
+// class Solution {
+// public:
+//     int longestConsecutive(vector<int>& nums) {
+//         if(nums.size()==0) return 0;
+//         unordered_set<int> st;
+//         int longest=0;
+//         for(int i=0;i<nums.size();i++){
+//             st.insert(nums[i]);
+//         }
+//         for(auto it:st){
+//             if(st.find(it-1)==st.end()){
+//                 int cnt=1;
+//                 int a=it;
+//                 while(st.find(a+1)!=st.end()){
+//                     cnt++;
+//                     a++;
+//                 }
+//             longest = max(longest,cnt);
+//             }
+//         }
+//         return longest;
+//     }
+// };
