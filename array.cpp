@@ -568,3 +568,97 @@ using namespace std;
 //         return longest;
 //     }
 // };
+
+
+
+// Set Matrix Zeros---------------------------------------------------
+
+// class Solution {
+// public:
+//     void setZeroes(vector<vector<int>>& matrix) {
+//         int m = matrix.size(), n = matrix[0].size();
+//         int col0=1;
+//         for(int i=0;i<m;i++){
+//             for(int j=0;j<n;j++){
+//                 if(matrix[i][j]==0){
+//                     matrix[i][0]=0;
+//                     if(j!=0){
+//                     matrix[0][j]=0;
+//                     }else{
+//                         col0=0;
+//                     }
+//                 }
+//             }
+//         }
+//         for(int i=1;i<m;i++){
+//             for(int j=1;j<n;j++){
+//                 if(matrix[i][j]!=0){
+//                     if(matrix[i][0]==0||matrix[0][j]==0){
+//                         matrix[i][j]=0;
+//                     }
+//                 }
+//             }
+//         }
+//         if(matrix[0][0]==0){
+//         for(int j=0;j<n;j++) matrix[0][j]=0;
+//         }
+//         if(col0==0){
+//         for(int i=0;i<m;i++) matrix[i][0]=0;
+//         }
+//         return ;
+//     }
+// };
+
+
+// Rotate Image------------------------------------------
+
+// class Solution {
+// public:
+//     void rotate(vector<vector<int>>& matrix) {
+//         int n = matrix.size();
+//         for(int i=0;i<n-1;i++){
+//             for(int j=i+1;j<n;j++){
+//                 swap(matrix[i][j],matrix[j][i]);
+//             }
+//         }
+//         for(int i =0;i<n;i++){
+//             reverse(matrix[i].begin(),matrix[i].end());
+//         }
+//     }
+// };
+
+
+// Spiral Matrix-----------------------------------------------
+
+// class Solution {
+// public:
+//     vector<int> spiralOrder(vector<vector<int>>& mat) {
+//         vector<int> ans;
+//         int m = mat.size();
+//         int n = mat[0].size();
+//         int left=0,top=0,right=n-1,bottom=m-1;
+        
+//         while(top<=bottom && left<=right){
+//         for(int i=left;i<=right;i++){
+//             ans.push_back(mat[top][i]);
+//         }
+//         top++;
+//         for(int i=top;i<=bottom;i++){
+//             ans.push_back(mat[i][right]);
+//         }
+//         right--;
+//         if(top<=bottom){
+//         for(int i=right;i>=left;i--){
+//             ans.push_back(mat[bottom][i]);
+//         }
+//         bottom--;
+//         }
+//         if(left<=right){
+//         for(int i=bottom;i>=top;i--){
+//             ans.push_back(mat[i][left]);
+//         }
+//         left++;
+//         }}
+//         return ans;
+//     }
+// };
