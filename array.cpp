@@ -766,3 +766,79 @@ using namespace std;
 //        return ans; 
 //     }
 // };
+
+
+// 4SUM----------------------------------------------------------
+
+// class Solution {
+// public:
+//     vector<vector<int>> fourSum(vector<int>& nums, int target) {
+//         int n = nums.size();
+//         sort(nums.begin(),nums.end());
+//         vector<vector<int>> ans;
+//         for(int i=0;i<n;i++){
+//             if(i>0 && nums[i]==nums[i-1]) continue;
+//             for(int j=i+1 ;j<n;j++){
+//                 if(j>i+1 && nums[j]==nums[j-1]) continue;
+//                 int k=j+1;
+//                 int l=n-1;
+//                 while(k<l){
+//                     long long sum = nums[i] + nums[j];
+//                     sum += nums[k] +nums[l];
+//                     if(sum==target){
+//             ans.push_back({nums[i],nums[j],nums[k],nums[l]});
+//                         k++;
+//                         l--; 
+//                         while(k<l && nums[k]==nums[k-1]) k++;
+//                         while(k<l && nums[l]==nums[l+1]) l--;
+//                     }else if(sum<target){
+//                         k++;
+//                     }else{
+//                         l--;
+//                     }
+//                 }
+//             }
+//         }
+//         return ans;
+//     }
+// };
+
+
+// Merge Overlapping Subintervals--------------------------------------------
+
+// class Solution {
+// public:
+//     vector<vector<int>> merge(vector<vector<int>>& nums) {
+//         int n = nums.size();
+//         sort(nums.begin(),nums.end());
+//         vector<vector<int>> ans;
+//         for(int i=0;i<n;i++){
+//            if(ans.empty() || nums[i][0]>ans.back()[1]){
+//             ans.push_back(nums[i]);
+//            }else{
+//             ans.back()[1] = max(nums[i][1],ans.back()[1]);
+//            }
+//         }
+//         return ans;
+//     }
+// };
+
+
+
+//  Merge Sorted Array--------------------------------------------------------
+
+// class Solution {
+// public:
+//     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+//         int i=m-1,j=n-1,k=m+n-1;
+//         while(j>=0){
+//             if(i>=0 && nums1[i]>nums2[j]){
+//                 nums1[k]=nums1[i];
+//                 i--,k--;
+//             }else{
+//                 nums1[k]=nums2[j];
+//                 j--,k--;
+//             }
+//         }
+//     }
+// };
