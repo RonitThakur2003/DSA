@@ -85,3 +85,100 @@
 //         return {starting,ending};
 //     }
 // };
+
+
+// OTHER APPROACH-----------------------------------------------------------
+
+// class Solution {
+// public:
+//     int binarySearch(vector<int>& nums, int target,bool check){
+//         int n = nums.size();
+//         int low = 0,high = n-1;
+//         int ans = -1;
+//         while(low<=high){
+//             int mid = (low+high)/2;
+//             if(nums[mid]==target){
+//                 ans=mid;
+//                 if(check==true)
+//                 high = mid-1;
+//                 else
+//                 low = mid+1;
+//             }
+//             else if(nums[mid]>target) high = mid-1;
+//             else low = mid+1;
+//         }
+//         return ans;
+//     }
+
+   
+//     vector<int> searchRange(vector<int>& nums, int target) {
+//         int starting = binarySearch(nums,target,true);
+//         int ending = binarySearch(nums,target,false);
+//         return {starting,ending};
+//     }
+// };
+
+
+
+// Search in Rotated Sorted Array----------------------------------------------------
+
+// class Solution {
+// public:
+//     int search(vector<int>& nums, int target) {
+//         int n = nums.size();
+//         int low=0,high=n-1;
+//         while(low<=high){
+//             int mid = (low + high)/2;
+//             if(nums[mid]==target) return mid;
+//             else if(nums[low]<=nums[mid]){
+//                 if(nums[low]<=target && target<=nums[mid]){
+//                     high = mid-1;
+//                 }else{
+//                     low = mid+1;
+//                 }
+//             }else{
+//                 if(nums[mid]<=target && target<=nums[high]){
+//                     low = mid+1;
+//                 }else{
+//                     high = mid-1;
+//                 }
+//             }
+//         }
+//         return -1;
+//     }
+// };
+
+
+
+// Search in Rotated Sorted Array 2 [with duplicates]----------------------------------------------------
+
+// class Solution {
+// public:
+//     bool search(vector<int>& nums, int target) {
+//         int n = nums.size();
+//         int low=0,high=n-1;
+//         while(low<=high){
+//             int mid = (low + high)/2;
+//             if(nums[mid]==target) return true;
+//             if(nums[low]==nums[mid] && nums[mid]==nums[high]){
+//                 low = low+1;
+//                 high = high-1;
+//                 continue;
+//             }
+//             if(nums[low]<=nums[mid]){
+//                 if(nums[low]<=target && target<=nums[mid]){
+//                     high = mid-1;
+//                 }else{
+//                     low = mid+1;
+//                 }
+//             }else{
+//                 if(nums[mid]<=target && target<=nums[high]){
+//                     low = mid+1;
+//                 }else{
+//                     high = mid-1;
+//                 }
+//             }
+//         }
+//         return false;
+//     }
+// };
