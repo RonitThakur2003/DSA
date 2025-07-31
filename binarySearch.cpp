@@ -182,3 +182,54 @@
 //         return false;
 //     }
 // };
+
+
+
+//  Find Minimum in Rotated Sorted Array---------------------------------------------
+
+
+// class Solution {
+// public:
+//     int findMin(vector<int>& nums) {
+//         int n = nums.size();
+//         int low = 0,high = n-1,mini = INT_MAX;
+//         while(low<=high){
+//             int mid = (low+high)/2;
+//             if(nums[low]<=nums[mid]&&nums[mid]<=nums[high]){
+//                 high = mid-1;
+//             }
+//             else if(nums[low]<=nums[mid]){
+//                 low = mid+1;
+//             }else{
+//                 high = mid-1;
+//             }
+//             mini = min(mini,nums[mid]);
+//         }
+//         return mini;
+//     }
+// };
+
+
+// Other Approach
+// class Solution {
+// public:
+//     int findMin(vector<int>& nums) {
+//         int n = nums.size();
+//         int low = 0,high = n-1,mini = INT_MAX;
+//         while(low<=high){
+//             int mid = (low+high)/2;
+//             if(nums[low]<=nums[high]){
+//                 mini = min(mini,nums[low]);
+//                 break;
+//             }
+//             if(nums[low]<=nums[mid]){
+//                 mini = min(mini,nums[low]);
+//                 low = mid+1;
+//             }else{
+//                 mini = min(mini,nums[mid]);
+//                 high = mid-1;
+//             }
+//         }
+//         return mini;
+//     }
+// };
