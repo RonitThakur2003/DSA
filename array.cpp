@@ -862,3 +862,43 @@ using namespace std;
 //         return ans;
 //     }
 // };
+
+
+// Minimum Size Subarray Sum--------------------------------------------------------
+
+ // int n= nums.size();
+        // int minCnt=INT_MAX;
+        // for(int i=0;i<n;i++){
+        //     int sum = 0;
+        //     for(int j=i;j<n;j++){
+        //         sum += nums[j];
+        //         if(sum>=k){
+        //             minCnt = min(j-i+1,minCnt);
+        //         }
+        //     }
+        // }
+        // return (minCnt==INT_MAX)?0:minCnt;
+
+
+// class Solution {
+// public:
+//     int minSubArrayLen(int k, vector<int>& nums) {
+//         int n = nums.size();
+//         int i=0,j=0,sum=0,cnt=INT_MAX;
+//         while(i<n){
+//             sum += nums[i];
+//             if(sum>=k){
+//                 cnt = min(cnt,i-j+1);
+//                 while(sum>=k){
+//                     sum -= nums[j];
+//                     j++;
+//                     if(sum>=k){
+//                         cnt = min(cnt,i-j+1);
+//                     }
+//                 }
+//             }
+//             i++;
+//         }
+//         return (cnt==INT_MAX)?0:cnt;
+//     }
+// };
