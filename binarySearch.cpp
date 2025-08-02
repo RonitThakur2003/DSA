@@ -283,3 +283,77 @@
 //         return -1;
 //     }
 // };
+
+
+
+// Minimum Number of Days to Make m Bouquets-----------------------------------------
+
+// class Solution {
+// public:
+//     bool isPossible(vector<int>& bloomDay, int m, int k,int mid){
+//         int cnt = 0,bouquet=0;
+//         for(auto it:bloomDay){
+//             if(it<=mid){
+//                 cnt++;
+//             }else{
+//                 bouquet += cnt/k;
+//                 cnt = 0;
+//             }
+//         }
+//         bouquet += cnt/k;
+//         return (bouquet>=m)?true:false;
+//     }
+
+//     int minDays(vector<int>& bloomDay, int m, int k) {
+//         int n = bloomDay.size();
+//         if((double)m*k>n) return -1;
+//         int low = INT_MAX,high=0;
+//         for(auto it:bloomDay){
+//             low = min(low,it);
+//             high = max(high,it);
+//         }
+//         while(low<=high){
+//             int mid = (low+high)/2;
+//             bool isPosb = isPossible(bloomDay,m,k,mid);
+//             if(isPosb==true){
+//                 high = mid-1;
+//             }
+//             else low = mid+1;
+//         }
+//     return low;
+//     }
+// };
+
+
+
+// Koko Eating Bananas-----------------------------------------------------
+
+// class Solution {
+// public:
+//     long long eatingSpeed(vector<int>& piles,int mid,int n){
+//         long long hours=0;
+//         for(int i = 0;i<n;i++){
+//             hours += ceil((double)piles[i]/mid);
+//         }
+//         return hours;
+//     }
+
+//     int minEatingSpeed(vector<int>& piles, int h) {
+//         int n = piles.size();
+//         int maxEl = INT_MIN;
+//         for(int i=0;i<n;i++){
+//             maxEl = max(maxEl,piles[i]);
+//         }
+//         int low = 1,high = maxEl;
+//         while(low<=high){
+//             int mid = (low+high)/2;
+//             long long hours = eatingSpeed(piles,mid,n);
+//             if(hours<=h){
+//                 high = mid-1;
+//             }else{
+//                 low=mid+1;
+//             }
+//         }
+//         return low;
+//     }
+// };
