@@ -357,3 +357,86 @@
 //         return low;
 //     }
 // };
+
+
+// Find the smallest Divisor------------------------------------------------------
+
+// class Solution {
+// public:
+//     int divisorSum(vector<int>& nums,int mid){
+//         double sum = 0;
+//         for(auto it:nums){
+//             sum += ceil((double)it/(double)mid); 
+//         }
+//         return sum;
+//     }
+
+//     int smallestDivisor(vector<int>& nums, int k) {
+//         int low = 1,high = 0;
+//         for(auto it:nums){
+//             high = max(high,it);
+//         }
+//         while(low<=high){
+//             int mid = (low+high)/2;
+//             int sum = divisorSum(nums,mid);
+//             if(sum<=k){
+//                 high = mid-1;
+//             }
+//             else low=mid+1;
+//         }
+//         return low;
+//     }
+// };
+
+
+// Capacity to Ship Packages within D Days-----------------------------------------------
+
+// class Solution {
+// public:
+//     int minDays(vector<int>& weights, int cap){
+//         int days = 1,load = 0;
+//         int n = weights.size();
+//         for(int i=0;i<n;i++){
+//             if (load + weights[i] > cap) {
+//             days += 1; 
+//             load = weights[i]; 
+//             }else {
+//                 load += weights[i];
+//             }
+//         }
+//         return days;
+//     }
+
+//     int shipWithinDays(vector<int>& weights, int days) {
+//         int low = *max_element(weights.begin(),weights.end());
+//         int high = accumulate(weights.begin(), weights.end(), 0);
+//         while(low<=high){
+//             int mid = (low+high)/2;
+//             int reqDays = minDays(weights,mid);
+//             if(reqDays <= days){
+//                 high = mid-1;
+//             }else{
+//                 low = mid+1;
+//             }
+//         }
+//         return low;
+//     }
+// };
+
+
+// Kth Missing Positive Number----------------------------------------------------
+
+// class Solution {
+// public:
+//     int findKthPositive(vector<int>& arr, int k) {
+//         int n = arr.size();
+//         int low = 0,high = n-1;
+//         while(low<=high){
+//             int mid = (high+low)/2;
+//             int missing = arr[mid]-(mid+1);
+//             if(missing<k) low = mid+1;
+//             else high = mid-1;
+//         }     
+//         return low+k;
+//     }
+// };
