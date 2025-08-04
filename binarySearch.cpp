@@ -440,3 +440,41 @@
 //         return low+k;
 //     }
 // };
+
+
+
+
+// Split Array Largest Sum----------------------------------------------------
+//           OR
+// Book Allocation Problem----------------------------------------------------
+//           OR
+// Painter's partition--------------------------------------------------------
+
+// class Solution {
+// public:
+//     bool check(int largestsum,vector<int> &nums,int k){
+//         int cnt=1;
+//         int currsum=0;
+//         for(int i=0;i<nums.size();i++){
+//             if(currsum+nums[i]>largestsum){
+//                 cnt++;
+//                 currsum=nums[i];
+//             }
+//             else currsum+=nums[i];
+//         }
+//         if(cnt>k) return false;
+//         else return true;
+//     }
+//     int splitArray(vector<int>& nums, int k) {
+//         int low=*max_element(nums.begin(),nums.end());
+//         int high=accumulate(nums.begin(),nums.end(),0);
+//         while(low<=high){
+//             int mid=low+(high-low)/2;
+//             if(check(mid,nums,k)){
+//                 high=mid-1;
+//             }
+//             else low=mid+1;
+//         }
+//         return low;
+//     }
+// };
