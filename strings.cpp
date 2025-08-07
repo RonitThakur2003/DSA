@@ -125,3 +125,88 @@
 //        return ans;
 //     }
 // };
+
+
+
+// Longest Common Prefix---------------------------------------------------------------------
+
+// class Solution {
+// public:
+//     string longestCommonPrefix(vector<string>& strs) {
+//         if (strs.empty()) return "";
+//         sort(strs.begin(),strs.end());
+//         string first = strs[0];
+//         string last = strs[strs.size()-1];
+//         string ans;
+//         int n = min(first.size(),last.size());
+//         for(int i=0;i<n;i++){
+//             if(first[i]==last[i]){
+//                 ans += first[i];
+//             }else break;
+//         }
+//         return ans;
+//     }
+// };
+
+
+// Isomorphic Strings--------------------------------------------------------------------------
+
+// class Solution {
+// public:
+//     bool isIsomorphic(string s, string t) {
+//         char indS[128]={0};
+//         char indT[128]={0};
+//         if(s.size()!=t.size()) return false;
+//         for(int i=0;i<s.size();i++){
+//             if(indS[s[i]]!=indT[t[i]]) return false;
+//             indS[s[i]]=i+1;
+//             indT[t[i]]=i+1;
+//         }
+//         return true;
+//     }
+// };
+
+
+// Rotate String--------------------------------------------------------------------------
+
+// class Solution {
+// public:
+//     bool rotateString(string s, string goal) {
+//         if(s.size()!=goal.size()) return false;
+//         string concat = s+s;
+//         return concat.find(goal) < concat.size();
+//     }
+// };
+
+
+
+// Valid Anagram------------------------------------------------------------------------------
+
+// BRUTE
+
+// class Solution {
+// public:
+//     bool isAnagram(string s, string t) {
+//         sort(s.begin(),s.end());
+//         sort(t.begin(),t.end());
+//         return s==t;
+//     }
+// };
+
+// OPTIMAL
+
+// class Solution {
+// public:
+//     bool isAnagram(string s, string t) {
+//         if(s.size()!=t.size()) return false;
+//         int hashS[26],hashT[26];
+//         for(int i=0;i<s.size();i++){
+//             hashS[s[i]-97]++;
+//             hashT[t[i]-97]++;
+//         }
+//         for(int i=0;i<26;i++){
+//             if(hashS[i]!=hashT[i]) return false;
+//         }
+//         return true;
+//     }
+// };
