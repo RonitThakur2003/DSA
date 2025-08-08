@@ -210,3 +210,81 @@
 //         return true;
 //     }
 // };
+
+
+
+// Sort Characters By Frequency------------------------------------------------------------------------------
+
+// BRUTE
+
+// class Solution {
+// public:
+//     string frequencySort(string s) {
+//         int hash[128]={0};
+//         for(auto it:s) hash[it]++;
+
+//         auto cmp = [&](char a,char b){
+//             if(hash[a]==hash[b]) return a>b;
+//             return hash[a]>hash[b];
+//         };
+//         sort(s.begin(),s.end(),cmp);
+//         return s;
+//     }
+// };
+
+// OPTIMAL
+
+// class Solution {
+// public:
+//     string frequencySort(string s) {
+//         unordered_map<char, int> freq;
+//         for (char c : s) {
+//             freq[c]++;
+//         }
+//         priority_queue<pair<int, char>> pq;
+//         for (auto& [ch, count] : freq) {
+//             pq.push({count, ch});
+//         }
+//         string result;
+//         while (!pq.empty()) {
+//             auto [count, ch] = pq.top();
+//             pq.pop();
+//             result += string(count, ch); 
+//         }
+//         return result;
+//     }
+// };
+
+
+// Maximum Nesting Depth of the Parentheses----------------------------------------------------------------------------
+
+// class Solution {
+// public:
+//     int maxDepth(string s) {
+//         int cnt=0,ans=0;
+//         for(int i=0;i<s.size();i++){
+//             if(s[i]=='('){
+//                 cnt++;
+//                 ans = max(cnt,ans);
+//             }else if(s[i]==')') cnt--;
+//         }
+//         return ans;
+//     }
+// };
+
+
+// Roman to Integer----------------------------------------------------------------------------
+
+// class Solution {
+// public:
+//     int romanToInt(string s) {
+//         unordered_map<char,int> mpp{{'I',1},{'V',5},{'X',10},{'L',50},{'C',100},{'D',500},{'M',1000}};
+//         int ans=0;
+//         for(int i=0;i<s.size();i++){
+//             if(mpp[s[i]]<mpp[s[i+1]]){
+//                 ans -= mpp[s[i]];
+//             }else ans += mpp[s[i]];
+//         }
+//         return ans;
+//     }
+// };
