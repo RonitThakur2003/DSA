@@ -288,3 +288,34 @@
 //         return ans;
 //     }
 // };
+
+
+// Longest Palindromic Substring----------------------------------------------------------------------------
+
+// BRUTE APPROACH-------
+
+// class Solution {
+// public:
+//     string longestPalindrome(string s) {
+//         for(int i=s.size();i>0;i--){
+//             for(int j=0;j<=s.size()-i;j++){
+//                 if(check(s,j,j+i)){
+//                     return s.substr(j,i);
+//                 }
+//             }
+//         }
+//         return " ";
+//     }
+
+//     bool check(string s,int i,int j){
+//         int left=i,right=j-1;
+//         while(left<right){
+//             if(s[left]!=s[right]){
+//                 return false;
+//             }
+//             left++;
+//             right--;
+//         }
+//         return true;
+//     }
+// };
