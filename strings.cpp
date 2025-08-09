@@ -319,3 +319,34 @@
 //         return true;
 //     }
 // };
+
+
+// OPTIMAL APPROACH
+
+// class Solution {
+// public:
+//     string expand(int i,int j,string s){
+//         int start=i;
+//         int end=j;
+//         while(start>=0 && end<s.size() && s[start]==s[end]){
+//             start--;
+//             end++;
+//         }
+//         return s.substr(start+1,end-start-1);
+//     }
+
+//     string longestPalindrome(string s){
+//         string ans = "";
+//         for(int i=0;i<s.size();i++){
+//             string odd = expand(i,i,s);
+//             if(odd.size()>ans.size()){
+//                 ans=odd;
+//             }
+//             string even = expand(i,i+1,s);
+//             if(even.size()>ans.size()){
+//                 ans=even;
+//             }
+//         }
+//         return ans;
+//     }
+// };
