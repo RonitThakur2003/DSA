@@ -71,3 +71,115 @@
 //         return false;
 //     }
 // };
+
+
+
+// Find the starting point in LL-----------------------------------------------------------
+
+
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode(int x) : val(x), next(NULL) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     ListNode *detectCycle(ListNode *head) {
+//         if(head == NULL || head->next == NULL)
+//         return NULL;
+//         ListNode* slow=head;
+//         ListNode* fast=head;
+//         while(fast!=NULL && fast->next!=NULL){
+//             slow = slow->next;
+//             fast = fast->next->next;
+//             if(slow==fast){
+//                 slow=head;
+//                 while(slow!=fast){
+//                     slow=slow->next;
+//                     fast=fast->next;
+//                 }
+//                 return slow;
+//             }
+//         }
+//         return NULL;
+//     }
+// };
+
+
+
+// Palindrome Linked List---------------------------------------------------------------------
+
+// BRUTE--------
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+// class Solution {
+// public:
+//     bool isPalindrome(ListNode* head) {
+//         ListNode *temp = head;
+//         stack<int> st;
+//         while(temp!=NULL){
+//             st.push(temp->val);
+//             temp=temp->next;
+//         }
+//         temp=head;
+//         while(temp!=NULL){
+//             if(temp->val!=st.top()) return false;
+//             temp=temp->next;
+//             st.pop();
+//         }
+//         return true;
+//     }
+// };
+
+
+// OPTIMAL--------
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+// class Solution {
+// public:
+//     bool isPalindrome(ListNode* head) {
+//         if(!head || !head->next) return true;
+//         ListNode *slow = head;
+//         ListNode *fast = head;
+//         while(fast->next!=NULL && fast->next->next!=NULL){
+//             slow=slow->next;
+//             fast=fast->next->next;
+//         }
+//         ListNode *temp = slow, *front=slow, *back=NULL;
+//         while(temp!=NULL){
+//             front = temp->next;
+//             temp->next = back;
+//             back=temp;
+//             temp=front;
+//         }
+//         front=head;
+//         while(back->next!=NULL){
+//             if(front->val!=back->val) return false;
+//             front=front->next;
+//             back=back->next;
+//         }
+//         return true;
+//     }
+// };
+
